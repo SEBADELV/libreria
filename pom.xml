@@ -56,6 +56,11 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+            <version>3.17.4</version>
+        </dependency>
     </dependencies>
 
     <build>
