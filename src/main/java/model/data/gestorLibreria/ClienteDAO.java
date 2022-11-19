@@ -1,18 +1,19 @@
 package model.data.gestorLibreria;
+
 import model.cliente;
 import org.jooq.*;
 import org.jooq.impl.DSL;
-import model.data.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.jooq.impl.DSL.*;
 import static org.jooq.impl.SQLDataType.VARCHAR;
-public class gestorCliente {
+
+public class ClienteDAO {
     public static void agregarCliente(DSLContext query, cliente cliente){
         Table tablaCliente= table(name("Cliente"));
-        Field[] columnas = tablaCliente.fields("nombre","rut","correo");
+        Field[] columnas = tablaCliente.fields("rut","nombre","correo");
         query.insertInto(tablaCliente, columnas[0], columnas[1],columnas[2])
                 .values(cliente.getRut(),cliente.getNombre(),cliente.getCorreo())
                 .execute();
@@ -25,8 +26,8 @@ public class gestorCliente {
         Result resultados = query.select().from(DSL.table("Cliente")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         return obtenerListaClientes(resultados);
     }
-    public static List obtenerUsuarios(DSLContext query){
-        Result resultados = query.select().from(DSL.table("Usuario")).fetch();
+    public static List obtenerClientes(DSLContext query){
+        Result resultados = query.select().from(DSL.table("Cliente")).fetch();
         return obtenerListaClientes(resultados);
     }
     public static void eliminarCliente(DSLContext query, String rut){
@@ -43,4 +44,6 @@ public class gestorCliente {
         }
         return clientes;
     }
+
+
 }

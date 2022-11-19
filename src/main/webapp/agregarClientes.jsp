@@ -11,8 +11,8 @@
     <title>Agregar Clientes</title>
 </head>
 <body>
-<h1 class="encabezado"> Registro usuario</h1>
-<form action="Registro cliente" method="post">
+<h1 class="encabezado"> Registro Cliente</h1>
+<form action="registroCliente" method="post">
   <div class="centrado">
     <label> Nombre:</label>
     <input name="nombre" type="text" class="campoTexto">

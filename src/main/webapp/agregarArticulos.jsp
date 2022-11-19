@@ -11,8 +11,8 @@
     <title>Ingresar Articulo</title>
 </head>
 <body>
-<h1 class="encabezado"> Registro usuario</h1>
-<form action="AgregarArticulo" method="post">
+<h1 class="encabezado"> Agregar Articulos</h1>
+<form action="AgregarArticulo" method=" post">
     <div class="centrado">
         <label> Nombre:</label>
         <input name="nombre" type="text" class="campoTexto">
